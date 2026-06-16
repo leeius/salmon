@@ -1,0 +1,18 @@
+.button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.secondary {
+  background: var(--color-soft);
+  color: var(--color-text);
+}
