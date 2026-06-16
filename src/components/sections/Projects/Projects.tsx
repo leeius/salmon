@@ -9,11 +9,11 @@ const projectLoop = [...projects, ...projects];
 const tags = ['Web Design', 'UI/UX', 'Development'];
 
 const projectDetails = {
-  'Master Driving School':
+  'MASTER DRIVING SCHOOL':
     'A modern and user-friendly website for Master Driving School that showcases driving programs, schedules, and learning resources.',
-  Masterauto:
+  'MASTER AUTO':
     'A sleek and professional website for Masterauto featuring car care services, customer engagement, and brand trust.',
-  LIsensyaGo:
+  LISENSYAGO:
     'A digital platform that simplifies the licensing process with easy booking, real-time guidance, and customer-focused service information.',
 };
 

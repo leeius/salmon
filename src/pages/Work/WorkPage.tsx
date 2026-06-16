@@ -24,17 +24,17 @@ const strengths = [
 ];
 
 const projectDetails = {
-  'Master Driving School': {
+  'MASTER DRIVING SCHOOL': {
     category: 'Education / Driving School',
     description:
       'A modern and user-friendly website for Master Driving School that showcases driving programs, schedules, and learning resources.',
   },
-  Masterauto: {
+  'MASTER AUTO': {
     category: 'Automotive / Car Services',
     description:
       'A sleek and professional website for Masterauto featuring car care services such as ceramic coating, detailing, and paint protection.',
   },
-  LIsensyaGo: {
+  LISENSYAGO: {
     category: 'Government / Licensing Services',
     description:
       'A digital platform that simplifies the licensing process with easy booking, real-time guidance, and customer-focused service information.',
