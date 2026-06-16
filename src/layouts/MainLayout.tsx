@@ -28,7 +28,7 @@ export function MainLayout() {
           <Hero
             title={
               <>
-                <strong>Innovation</strong>
+                <strong>Salmon Innovation</strong>
                 That Rises Above
               </>
             }

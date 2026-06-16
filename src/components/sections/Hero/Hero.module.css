@@ -193,14 +193,17 @@
 
 @media (max-width: 900px) {
   .hero {
+    background:
+      radial-gradient(circle at 78% 84%, rgba(255, 70, 22, 0.09), transparent 30%),
+      linear-gradient(180deg, #fff 0%, #fff 70%, #fff7f2 100%);
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: 2.2rem;
+    padding-top: clamp(2rem, 8vw, 3rem);
   }
 
   .content {
     max-width: 680px;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .visual {
@@ -219,27 +222,44 @@
 
 @media (max-width: 560px) {
   .hero {
-    padding-top: 1.6rem;
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+    padding-top: 2rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 13vw, 3.35rem);
+    font-size: clamp(2.25rem, 11.4vw, 3.05rem);
+    line-height: 1.06;
+    max-width: 380px;
   }
 
   .hero p {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 360px;
+  }
+
+  .rule {
+    margin: 1rem 0 1rem;
+    width: 66px;
+  }
+
+  .cta {
+    min-height: 48px;
+    padding: 0 1.25rem;
   }
 
   .visual {
-    min-height: 250px;
+    margin-top: 0.6rem;
+    min-height: 235px;
   }
 
   .fishWrapper {
-    width: min(220px, 68vw);
+    width: min(210px, 58vw);
   }
 
   .waves {
-    height: 175px;
-    left: -80%;
+    height: 165px;
+    left: -95%;
   }
 }
