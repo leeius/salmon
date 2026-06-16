@@ -274,7 +274,7 @@
     width: 38px;
   }
 
-  .nav button {
+  .nav button:not(.mobileCta) {
     border-radius: 8px;
     color: var(--color-navy);
     font-size: 0.84rem;
@@ -311,6 +311,7 @@
   .mobileCta {
     align-items: center;
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border: 0;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(255, 70, 22, 0.28);
     color: #fff;
@@ -320,10 +321,15 @@
     margin-top: 0.95rem;
     min-height: 46px;
     padding: 0 1rem;
+    text-align: center;
+    width: 100%;
   }
 
   .nav .mobileCta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     color: #fff;
+    font-size: 0.78rem;
+    font-weight: 900;
   }
 
   .cta {
@@ -361,7 +367,7 @@
     font-size: 0.52rem;
   }
 
-  .nav button {
+  .nav button:not(.mobileCta) {
     font-size: 0.86rem;
   }
 }
