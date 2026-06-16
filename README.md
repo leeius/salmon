@@ -9,17 +9,11 @@ React and Vite project scaffold for Salmon Innovations.
 - About
 - Services
 - Projects
-- CTA
 - Footer
 
 ## Routes
 
 - `/` Home
-- `/about` About
-- `/services` Services
-- `/work` Our Work
-- `/careers` Careers
-- `/contact` Contact
 
 ## Stack
 
