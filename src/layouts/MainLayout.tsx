@@ -4,6 +4,7 @@ import { Footer } from '../components/layout/Footer/Footer';
 import { Navbar } from '../components/layout/Navbar/Navbar';
 import { About } from '../components/sections/About/About';
 import { Careers } from '../components/sections/Careers/Careers';
+import { Contact } from '../components/sections/Contact/Contact';
 import { Hero } from '../components/sections/Hero/Hero';
 import { Projects } from '../components/sections/Projects/Projects';
 import { Services } from '../components/sections/Services/Services';
@@ -46,6 +47,9 @@ export function MainLayout() {
         </section>
         <section id="careers">
           <Careers />
+        </section>
+        <section id="contact">
+          <Contact />
         </section>
       </main>
       <Footer />

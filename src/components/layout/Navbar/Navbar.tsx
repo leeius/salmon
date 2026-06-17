@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: 'Services', id: 'services' },
   { label: 'Our Work', id: 'work' },
   { label: 'Careers', id: 'careers' },
+  { label: 'Contact Us', id: 'contact' },
 ];
 
 function scrollTo(id: string, navigate: ReturnType<typeof useNavigate>) {
@@ -98,12 +99,12 @@ export function Navbar() {
             {item.label}
           </button>
         ))}
-        <button className={styles.mobileCta} onClick={() => handleNavigate('footer-contact')} type="button">
+        <button className={styles.mobileCta} onClick={() => handleNavigate('contact')} type="button">
           Get in touch
           <FiArrowRight aria-hidden="true" />
         </button>
       </nav>
-      <button className={styles.cta} onClick={() => handleNavigate('footer-contact')} type="button">
+      <button className={styles.cta} onClick={() => handleNavigate('contact')} type="button">
         Get in touch
         <FiArrowRight aria-hidden="true" />
       </button>

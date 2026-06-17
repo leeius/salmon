@@ -1,55 +1,141 @@
-import { FiArrowRight, FiClock, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import {
+  FiArrowRight,
+  FiArrowUp,
+  FiCheckCircle,
+  FiClock,
+  FiGlobe,
+  FiHeadphones,
+  FiInstagram,
+  FiLinkedin,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiShield,
+  FiTrendingUp,
+  FiYoutube,
+} from 'react-icons/fi';
+import { FaFacebookF } from 'react-icons/fa';
 import styles from './Footer.module.css';
+
+const companyLinks = [
+  { label: 'About Us', target: '#about' },
+  { label: 'Our Work', target: '#work' },
+  { label: 'Careers', target: '#careers' },
+  { label: 'Contact Us', target: '#contact' },
+];
+
+const values = [
+  {
+    icon: <FiShield />,
+    title: 'Quality First',
+    text: 'We deliver with precision and care.',
+  },
+  {
+    icon: <FiTrendingUp />,
+    title: 'Built to Scale',
+    text: 'Solutions designed to grow with you.',
+  },
+  {
+    icon: <FiHeadphones />,
+    title: 'Reliable Support',
+    text: "We're here when you need us.",
+  },
+  {
+    icon: <FiClock />,
+    title: 'On-Time Delivery',
+    text: 'Your time is important. We deliver on it.',
+  },
+];
 
 export function Footer() {
   return (
     <footer className={styles.footer} id="footer-contact">
-      <div className={styles.top}>
-        <div className={styles.brand}>
-          <img src="/fish-mark.svg" alt="" />
-          <div>
-            <strong>Salmon</strong>
-            <span>Innovations Inc.</span>
-            <small>Innovation That Rises Above</small>
+      <div className={styles.main}>
+        <div className={styles.brandBlock}>
+          <div className={styles.brand}>
+            <img src="/fish-mark.svg" alt="" />
+            <div>
+              <strong>Salmon</strong>
+              <span>Innovations Inc.</span>
+              <small>Innovation That Rises Above</small>
+            </div>
+          </div>
+          <p>
+            We design and develop smart, scalable, and impactful digital solutions that help
+            businesses grow and stay ahead.
+          </p>
+          <div className={styles.socials}>
+            <a href="#home" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="#home" aria-label="LinkedIn">
+              <FiLinkedin />
+            </a>
+            <a href="#home" aria-label="Instagram">
+              <FiInstagram />
+            </a>
+            <a href="#home" aria-label="YouTube">
+              <FiYoutube />
+            </a>
           </div>
         </div>
-        <div className={styles.pitch}>
-          <h2>Let's talk about your next build.</h2>
-          <p>
-            Tell us what you want to improve, launch, or automate. We'll help turn it into a clear
-            digital solution.
-          </p>
+        <nav className={styles.column} aria-label="Company links">
+          <h2>Company</h2>
+          {companyLinks.map((link) => (
+            <a href={link.target} key={link.label}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className={styles.column}>
+          <h2>Get in touch</h2>
+          <a href="mailto:hello@salmoninnovations.com">
+            <FiMail />
+            hello@salmoninnovations.com
+          </a>
+          <a href="tel:+630000000000">
+            <FiPhone />
+            +63 000 000 0000
+          </a>
+          <span>
+            <FiMapPin />
+            Philippines
+          </span>
+          <span>
+            <FiGlobe />
+            Remote Worldwide
+          </span>
         </div>
-        <a className={styles.button} href="mailto:hello@salmoninnovations.com">
-          Email us
-          <FiArrowRight aria-hidden="true" />
-        </a>
+        <div className={styles.newsletter}>
+          <h2>Stay updated</h2>
+          <p>Subscribe to get insights, updates, and our latest work.</p>
+          <form>
+            <input aria-label="Email address" placeholder="Your email address" type="email" />
+            <button aria-label="Subscribe" type="submit">
+              <FiArrowRight />
+            </button>
+          </form>
+          <small>We respect your privacy. Unsubscribe anytime.</small>
+        </div>
       </div>
-      <div className={styles.contactGrid}>
-        <a href="mailto:hello@salmoninnovations.com">
-          <FiMail aria-hidden="true" />
-          <span>Email</span>
-          <strong>hello@salmoninnovations.com</strong>
-        </a>
-        <a href="tel:+630000000000">
-          <FiPhone aria-hidden="true" />
-          <span>Phone</span>
-          <strong>+63 000 000 0000</strong>
-        </a>
-        <div>
-          <FiMapPin aria-hidden="true" />
-          <span>Location</span>
-          <strong>Philippines and remote delivery</strong>
-        </div>
-        <div>
-          <FiClock aria-hidden="true" />
-          <span>Response</span>
-          <strong>Within 1 business day</strong>
-        </div>
+      <div className={styles.values}>
+        {values.map((item) => (
+          <article key={item.title}>
+            <span>{item.icon}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
       </div>
       <div className={styles.bottom}>
-        <span>© 2026 Salmon Innovations Inc.</span>
-        <span>Smart, scalable, impactful digital solutions.</span>
+        <p>(c) 2026 Salmon Innovations Inc.</p>
+        <p>PH based - Serving clients worldwide</p>
+        <p>Smart, scalable, impactful digital solutions.</p>
+        <a className={styles.topButton} href="#home" aria-label="Back to top">
+          <FiArrowUp />
+        </a>
       </div>
     </footer>
   );
