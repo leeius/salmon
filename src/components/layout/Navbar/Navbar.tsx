@@ -53,12 +53,7 @@ export function Navbar() {
         onClick={() => handleNavigate('home')}
         aria-label="Go to top"
       >
-        <img src="/fish-mark.svg" alt="" />
-        <span>
-          <strong>Salmon</strong>
-          Innovations Inc.
-          <small>Innovation That Rises Above</small>
-        </span>
+        <img src="/images/logo_salmon.png" alt="Salmon Innovations Inc." />
       </button>
       <button
         aria-expanded={isOpen}
@@ -79,11 +74,7 @@ export function Navbar() {
       <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
         <div className={styles.drawerHeader}>
           <div className={styles.drawerBrand}>
-            <img src="/fish-mark.svg" alt="" />
-            <span>
-              <strong>Salmon</strong>
-              Innovations Inc.
-            </span>
+            <img src="/images/logo_salmon.png" alt="Salmon Innovations Inc." />
           </div>
           <button aria-label="Close navigation menu" onClick={() => setIsOpen(false)} type="button">
             <FiX aria-hidden="true" />

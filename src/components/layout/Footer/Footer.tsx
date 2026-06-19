@@ -53,7 +53,7 @@ export function Footer() {
       <div className={styles.main}>
         <div className={styles.brandBlock}>
           <div className={styles.brand}>
-            <img src="/fish-mark.svg" alt="" />
+            <img src="/images/new_salmon.png" alt="" />
             <div>
               <strong>Salmon</strong>
               <span>Innovations Inc.</span>

@@ -27,33 +27,10 @@
 }
 
 .brand img {
-  height: 54px;
+  height: auto;
   object-fit: contain;
   object-position: left center;
-  width: 44px;
-}
-
-.brand span {
-  display: grid;
-  font-size: 0.78rem;
-  font-weight: 900;
-  line-height: 1.05;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.brand strong {
-  color: var(--color-primary);
-  font-size: 1.28rem;
-  line-height: 1;
-}
-
-.brand small {
-  color: var(--color-muted);
-  font-size: 0.6rem;
-  font-weight: 600;
-  margin-top: 0.28rem;
-  text-transform: none;
+  width: clamp(165px, 15vw, 230px);
 }
 
 .nav {
@@ -139,8 +116,7 @@
   }
 
   .brand img {
-    height: 64px;
-    width: 50px;
+    width: clamp(205px, 16vw, 260px);
   }
 }
 
@@ -149,8 +125,8 @@
     gap: 1rem;
   }
 
-  .brand span {
-    display: none;
+  .brand img {
+    width: 170px;
   }
 }
 
@@ -166,8 +142,7 @@
   }
 
   .brand img {
-    height: 50px;
-    width: 38px;
+    width: 168px;
   }
 
   .menuToggle {
@@ -242,22 +217,10 @@
   }
 
   .drawerBrand img {
-    height: 42px;
-    width: 34px;
-  }
-
-  .drawerBrand span {
-    color: var(--color-navy);
-    display: grid;
-    font-size: 0.68rem;
-    font-weight: 900;
-    line-height: 1.05;
-    text-transform: uppercase;
-  }
-
-  .drawerBrand strong {
-    color: var(--color-primary);
-    font-size: 1.08rem;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    width: 180px;
   }
 
   .drawerHeader > button {
@@ -345,26 +308,8 @@
     padding-right: 1.25rem;
   }
 
-  .brand span {
-    display: grid;
-  }
-
   .brand img {
-    height: 48px;
-    width: 38px;
-  }
-
-  .brand strong {
-    font-size: 1.18rem;
-  }
-
-  .brand span {
-    font-size: 0.72rem;
-  }
-
-  .brand small {
-    display: block;
-    font-size: 0.52rem;
+    width: 168px;
   }
 
   .nav button:not(.mobileCta) {

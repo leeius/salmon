@@ -9,7 +9,7 @@ function scrollTo(id: string) {
 export function CTA() {
   return (
     <section className={styles.cta}>
-      <img src="/fish-mark.svg" alt="" />
+      <img src="/images/new_salmon.png" alt="" />
       <h2>
         Let's Build
         <strong>Something Great Together</strong>

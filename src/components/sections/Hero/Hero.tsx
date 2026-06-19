@@ -32,7 +32,7 @@ export function Hero({ title, subtitle }: HeroProps) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
         >
-          <img src="/fish-mark.svg" alt="Salmon Innovations" />
+          <img src="/images/new_salmon.png" alt="Salmon Innovations" />
         </motion.div>
         <div className={styles.waves}>
           <span />

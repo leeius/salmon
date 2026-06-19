@@ -18,9 +18,10 @@
   background: #fff;
   border-radius: 999px;
   box-shadow: var(--shadow-soft);
-  height: clamp(58px, 7vw, 78px);
-  padding: 0.75rem;
-  width: clamp(58px, 7vw, 78px);
+  height: clamp(70px, 8vw, 92px);
+  object-fit: contain;
+  padding: 0.6rem;
+  width: clamp(70px, 8vw, 92px);
 }
 
 .cta h2 {
