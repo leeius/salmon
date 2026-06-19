@@ -33,6 +33,7 @@ const trustItems = [
 ];
 
 type SubmitState = 'idle' | 'sending' | 'success' | 'error';
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT || '/api/contact';
 
 export function Contact() {
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
@@ -54,7 +55,7 @@ export function Contact() {
     setFeedback('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(CONTACT_ENDPOINT, {
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',

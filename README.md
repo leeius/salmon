@@ -1,6 +1,6 @@
 # Salmon Innovations
 
-Landing page and contact site for Salmon Innovations Inc. built with React, TypeScript, Vite, and Vercel-compatible serverless contact handling.
+Responsive landing page and contact site for Salmon Innovations Inc. built with React, TypeScript, and Vite.
 
 Repository: https://github.com/salmon-innovations/salmon-innovations-dash-web-app.git
 
@@ -9,9 +9,10 @@ Repository: https://github.com/salmon-innovations/salmon-innovations-dash-web-ap
 - Responsive landing page for desktop, laptop, tablet, and mobile
 - Sections for hero, company overview, services, work, careers, contact, and footer
 - Mobile navigation drawer
-- Contact form endpoint at `/api/contact`
-- Google Sheets submission support through Google Apps Script
-- Docker runtime that serves the built app and keeps `/api/contact` available
+- Configurable contact form endpoint for static hosting
+- Google Sheets submission support through Apps Script or a backend API
+- Docker runtime for environments that need a Node server
+- AWS S3 deployment script
 
 ## Tech Stack
 
@@ -21,7 +22,6 @@ Repository: https://github.com/salmon-innovations/salmon-innovations-dash-web-ap
 - React Router
 - Framer Motion
 - React Icons
-- Axios
 
 ## Local Development
 
@@ -44,23 +44,45 @@ npm run preview
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` for local Docker/server usage, or add these in Vercel Project Settings.
-
-Recommended Google Apps Script setup:
+Copy `.env.example` to `.env.local` for local development.
 
 ```env
+VITE_CONTACT_ENDPOINT=/api/contact
 GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/your-deployment-id/exec
 CONTACT_FORM_SECRET=replace-with-a-long-random-secret
 GOOGLE_SHEET_NAME=Salmon Innovations Messages
+
+AWS_S3_BUCKET=your-s3-bucket-name
+AWS_REGION=ap-southeast-1
+AWS_CLOUDFRONT_DISTRIBUTION_ID=
 ```
 
-Optional fallback if service account keys are allowed:
+For AWS S3 static hosting, S3 cannot run `/api/contact`. Set `VITE_CONTACT_ENDPOINT` to an external endpoint, such as:
 
-```env
-GOOGLE_SERVICE_ACCOUNT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
-GOOGLE_SHEET_ID=your_google_sheet_id
+- AWS API Gateway + Lambda
+- A hosted Node API
+- A Google Apps Script web app if you accept a direct browser-to-script flow
+
+## AWS S3 Deployment
+
+Prerequisites:
+
+- AWS CLI installed
+- AWS credentials configured locally
+- An S3 bucket configured for static website hosting, or an S3 bucket behind CloudFront
+
+Deploy:
+
+```bash
+npm run deploy:s3
 ```
+
+The deploy script:
+
+- Runs `npm run build`
+- Syncs `dist` to `s3://$AWS_S3_BUCKET`
+- Uploads `index.html` with `no-cache`
+- Optionally invalidates CloudFront when `AWS_CLOUDFRONT_DISTRIBUTION_ID` is set
 
 ## Docker
 
@@ -82,38 +104,14 @@ Open:
 http://localhost:3000
 ```
 
-## Deployment
+## Contact Form
 
-### Vercel
+The frontend posts to `VITE_CONTACT_ENDPOINT`.
 
-1. Open Vercel and choose **Add New Project**.
-2. Import `salmon-innovations/salmon-innovations-dash-web-app`.
-3. Use the default Vite settings:
-   - Framework Preset: `Vite`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-4. Add the environment variables from `.env.example`.
-5. Deploy from the `main` branch.
+Default local/Docker endpoint:
 
-### Docker Host
+```env
+VITE_CONTACT_ENDPOINT=/api/contact
+```
 
-1. Build the Docker image.
-2. Provide the same environment variables.
-3. Expose port `3000`.
-
-## Contact Form Notes
-
-The contact form posts to `/api/contact`. In Vercel, this runs as a serverless function. In Docker, `server.js` serves the React app and forwards `/api/contact` to the same handler.
-
-## Google Sheets Design
-
-Use `google-apps-script/contact-sheet.gs` inside the Google Sheet:
-
-1. Open the Google Sheet.
-2. Go to **Extensions** -> **Apps Script**.
-3. Paste the script from `google-apps-script/contact-sheet.gs`.
-4. Set `SECRET` to the same value as `CONTACT_FORM_SECRET`.
-5. Deploy as a **Web app**:
-   - Execute as: `Me`
-   - Who has access: `Anyone`
-6. Copy the `/exec` URL into `GOOGLE_SCRIPT_URL`.
+For S3, use an external endpoint because S3 only serves static files.

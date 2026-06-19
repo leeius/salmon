@@ -8,3 +8,20 @@
     transform: translateY(0);
   }
 }
+
+/* Section fade in/out for scroll */
+.fade-section {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+
+.fade-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-section.out-view {
+  opacity: 0;
+  transform: translateY(12px);
+}

@@ -2,19 +2,23 @@ import type { Service } from '../types/service';
 
 export const services: Service[] = [
   {
-    title: 'Software Development',
-    description: 'Custom software solutions tailored to your business needs.',
+    title: 'Technology & Digital Transformation',
+    description: 'Modernize platforms and processes to accelerate digital change.',
   },
   {
-    title: 'Web & Mobile Apps',
-    description: 'User-friendly, high-performance applications for web and mobile platforms.',
+    title: 'Software & Systems Development',
+    description: 'End-to-end development of software and enterprise systems.',
   },
   {
-    title: 'Cloud Solutions',
-    description: 'Scalable and secure cloud services to optimize your business operations.',
+    title: 'Business Process Innovation',
+    description: 'Reimagine workflows to increase efficiency and drive value.',
   },
   {
-    title: 'IT Consulting',
-    description: 'Expert guidance to help you make the right tech decisions and grow.',
+    title: 'Data, Automation & Smart Solutions',
+    description: 'Leverage data, automation and AI to create intelligent operations.',
+  },
+  {
+    title: 'Strategic Consulting & Solution Design',
+    description: 'Align strategy and design to deliver practical, impactful solutions.',
   },
 ];

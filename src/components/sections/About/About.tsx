@@ -4,47 +4,49 @@ import { SectionTitle } from '../../common/SectionTitle/SectionTitle';
 import styles from './About.module.css';
 
 const stats = [
-  { value: '30+', label: 'Product builds supported' },
-  { value: '6', label: 'Core technology services' },
-  { value: '24/7', label: 'Cloud-ready mindset' },
+  { value: '5', label: 'Core innovation values' },
+  { value: '360°', label: 'Transformation mindset' },
+  { value: 'Future', label: 'Ready by design' },
 ];
 
 const principles = [
   {
     icon: <FiCpu />,
-    title: 'Smart Systems',
-    text: 'We design tools that simplify operations, reporting, and everyday decision-making.',
+    title: 'Upstream Thinking',
+    text: 'We challenge conventions and create beyond boundaries.',
   },
   {
     icon: <FiLayers />,
-    title: 'Scalable Delivery',
-    text: 'Our builds are structured to grow from first launch to long-term platform use.',
+    title: 'Purposeful Innovation',
+    text: 'Every idea must solve a real problem and create measurable value.',
   },
   {
     icon: <FiShield />,
-    title: 'Reliable Support',
-    text: 'We focus on secure, maintainable solutions that teams can trust after launch.',
+    title: 'Resilience',
+    text: 'We build solutions that endure change and perform under pressure.',
   },
 ];
 
 export function About() {
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <Container>
         <div className={styles.header}>
-          <SectionTitle eyebrow="Who We Are" title="Building Smarter Solutions for a Better Tomorrow" />
+          <SectionTitle eyebrow="Company Overview" title="" />
           <p>
-            We are a team of passionate innovators, developers, and problem-solvers committed to
-            delivering technology that creates real-world impact for growing businesses.
+            Salmon Innovations Inc. is a forward-thinking innovation and technology company
+            dedicated to creating solutions that rise above conventional limitations. Inspired by
+            the salmon's instinct to swim upstream, we exist to challenge norms, overcome
+            complexity, and deliver meaningful progress.
           </p>
         </div>
         <div className={styles.story}>
           <div className={styles.copy}>
-            <h3>We turn complex business needs into clear digital products.</h3>
+            <h3>We challenge complexity with resilient, future-ready innovation.</h3>
             <p>
-              Salmon Innovations Inc. works with organizations that need practical systems, modern
-              interfaces, and dependable technology partners. From planning to deployment, we help
-              teams move faster without losing clarity.
+              We specialize in designing resilient, scalable, and purpose-driven innovations that
+              empower businesses to adapt, grow, and succeed in an ever-evolving digital and
+              operational landscape.
             </p>
           </div>
           <div className={styles.stats}>

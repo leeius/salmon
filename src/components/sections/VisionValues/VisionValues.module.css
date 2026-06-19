@@ -1,0 +1,84 @@
+.vision {
+  padding: clamp(2rem, 4vw, 3.2rem) 0;
+}
+
+.gridTop {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.6rem;
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  color: var(--color-muted);
+}
+
+.core {
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+.coreTitle {
+  color: var(--color-navy);
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  margin: 0.6rem 0 2rem;
+  font-weight: 700;
+}
+
+.coreTitle span {
+  color: var(--color-primary);
+}
+
+.pillars {
+  display: flex;
+  justify-content: center;
+  gap: 2.8rem;
+  margin-top: 1.6rem;
+}
+
+.pillar {
+  max-width: 180px;
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff6f3;
+  color: var(--color-primary);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  font-size: 1.25rem;
+  margin: 0 auto 0.5rem;
+}
+
+.pillarText {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .gridTop {
+    grid-template-columns: 1fr;
+  }
+
+  .pillars {
+    flex-wrap: wrap;
+  }
+}

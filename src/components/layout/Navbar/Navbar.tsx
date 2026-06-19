@@ -7,9 +7,9 @@ import styles from './Navbar.module.css';
 const NAV_ITEMS = [
   { label: 'Home', id: 'home' },
   { label: 'About Us', id: 'about' },
+  { label: 'Brand Story', id: 'brand' },
   { label: 'Services', id: 'services' },
   { label: 'Our Work', id: 'work' },
-  { label: 'Careers', id: 'careers' },
   { label: 'Contact Us', id: 'contact' },
 ];
 

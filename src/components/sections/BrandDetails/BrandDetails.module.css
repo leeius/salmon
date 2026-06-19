@@ -1,0 +1,410 @@
+.brandDetails {
+  padding: clamp(3rem, 5vw, 4rem) 0;
+}
+
+/* ===== Brand Personality ===== */
+.personality {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.personalityLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.personalityImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.personalityQuote {
+  background: #fff1ec;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.quoteText {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-navy);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.quoteText span {
+  color: var(--color-primary);
+}
+
+.personalityRight {
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.title {
+  color: var(--color-navy);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0 0 1rem 0;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.lead {
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #fff;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(7, 31, 70, 0.04);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #fff6f3;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.feature h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Brand Promise ===== */
+.promise {
+  margin-bottom: 4rem;
+}
+
+.promiseIntro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promiseTitle {
+  color: var(--color-navy);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0.5rem 0 0 0;
+  font-weight: 800;
+}
+
+.promiseLead {
+  color: var(--color-muted);
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.promiseFlow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.promiseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+}
+
+.promiseIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: #fff6f3;
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.promiseCard h3 {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.promiseArrow {
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* ===== One-line Company Summary ===== */
+.summary {
+  position: relative;
+  padding: 3.5rem 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff8f5 0%, #fff6f3 100%);
+  overflow: hidden;
+}
+
+.summaryInner {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.summaryText {
+}
+
+.summaryTitle {
+  color: var(--color-navy);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.summaryTitle span {
+  color: var(--color-primary);
+}
+
+.summaryLead {
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.summaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  min-height: 48px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 8px 20px rgba(255, 70, 22, 0.28);
+}
+
+.summaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 70, 22, 0.38);
+}
+
+.summaryImage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+}
+
+.summaryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px) {
+  .personality {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .personalityLeft {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(260px, 1fr);
+    align-items: center;
+  }
+
+  .personalityImage {
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  .promiseFlow {
+    gap: 1rem;
+  }
+
+  .promiseCard h3 {
+    font-size: 0.8rem;
+  }
+
+  .summaryInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .summaryImage {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandDetails {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .personality {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    margin-bottom: 3rem;
+  }
+
+  .personalityRight {
+    order: 1;
+  }
+
+  .personalityLeft {
+    order: 2;
+    display: block;
+  }
+
+  .personalityImage {
+    display: none;
+  }
+
+  .personalityQuote {
+    padding: 1.25rem 1.35rem;
+  }
+
+  .quoteText {
+    font-size: 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    line-height: 1.08;
+  }
+
+  .lead {
+    margin-bottom: 1.15rem;
+  }
+
+  .features {
+    gap: 0.85rem;
+  }
+
+  .feature {
+    padding: 0.95rem;
+    gap: 0.85rem;
+    border-left-width: 3px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .feature h4 {
+    line-height: 1.25;
+  }
+
+  .feature p {
+    line-height: 1.45;
+  }
+
+  .promiseFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .promiseArrow {
+    display: none;
+  }
+
+  .summary {
+    padding: 2rem 1.5rem;
+  }
+
+  .summaryInner {
+    gap: 1.5rem;
+  }
+
+  .summaryTitle {
+    font-size: 2rem;
+  }
+
+  .summaryImage {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .personalityQuote {
+    border-left-width: 0;
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .feature {
+    align-items: center;
+  }
+}

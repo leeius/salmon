@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
-import { FiBarChart2, FiCloud, FiCode, FiSmartphone } from 'react-icons/fi';
+import { FiBarChart2, FiCloud, FiCode, FiSmartphone, FiLayers } from 'react-icons/fi';
 import { services } from '../../../data/servicesData';
 import { SectionTitle } from '../../common/SectionTitle/SectionTitle';
 import { Container } from '../../layout/Container/Container';
 import { ServiceCard } from './ServiceCard';
 import styles from './Services.module.css';
 
-const icons = [<FiCode />, <FiSmartphone />, <FiCloud />, <FiBarChart2 />];
+const icons = [<FiCode />, <FiSmartphone />, <FiCloud />, <FiBarChart2 />, <FiLayers />];
 
 export function Services() {
   return (
-    <section className={styles.services}>
+    <section id="services" className={styles.services}>
       <Container>
         <div className={styles.header}>
           <SectionTitle eyebrow="Our Services" title="What We Can Build for You" />
           <p>
-            Practical technology services for teams that need reliable systems, modern interfaces,
-            and scalable digital operations.
+            Salmon Innovations Inc. provides innovation-driven solutions across multiple domains,
+            including but not limited to:
           </p>
         </div>
         <div className={styles.grid}>
