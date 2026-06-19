@@ -51,7 +51,7 @@ Recommended Google Apps Script setup:
 ```env
 GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/your-deployment-id/exec
 CONTACT_FORM_SECRET=replace-with-a-long-random-secret
-GOOGLE_SHEET_NAME=Contact Submissions
+GOOGLE_SHEET_NAME=Salmon Innovations Messages
 ```
 
 Optional fallback if service account keys are allowed:
@@ -86,9 +86,14 @@ http://localhost:3000
 
 ### Vercel
 
-1. Import the repository in Vercel.
-2. Add the environment variables from `.env.example`.
-3. Deploy from the `main` branch.
+1. Open Vercel and choose **Add New Project**.
+2. Import `salmon-innovations/salmon-innovations-dash-web-app`.
+3. Use the default Vite settings:
+   - Framework Preset: `Vite`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Add the environment variables from `.env.example`.
+5. Deploy from the `main` branch.
 
 ### Docker Host
 
@@ -99,3 +104,16 @@ http://localhost:3000
 ## Contact Form Notes
 
 The contact form posts to `/api/contact`. In Vercel, this runs as a serverless function. In Docker, `server.js` serves the React app and forwards `/api/contact` to the same handler.
+
+## Google Sheets Design
+
+Use `google-apps-script/contact-sheet.gs` inside the Google Sheet:
+
+1. Open the Google Sheet.
+2. Go to **Extensions** -> **Apps Script**.
+3. Paste the script from `google-apps-script/contact-sheet.gs`.
+4. Set `SECRET` to the same value as `CONTACT_FORM_SECRET`.
+5. Deploy as a **Web app**:
+   - Execute as: `Me`
+   - Who has access: `Anyone`
+6. Copy the `/exec` URL into `GOOGLE_SCRIPT_URL`.

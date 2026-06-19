@@ -1,8 +1,12 @@
+import dotenv from 'dotenv';
 import { createServer } from 'node:http';
 import { createReadStream, existsSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import contactHandler from './api/contact.js';
+
+dotenv.config({ path: '.env.local', quiet: true });
+dotenv.config({ quiet: true });
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const distDir = join(__dirname, 'dist');
