@@ -82,6 +82,28 @@ async function sheetsFetch(path, token, options = {}) {
   return data;
 }
 
+async function submitToAppsScript(data) {
+  const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+  const secret = process.env.CONTACT_FORM_SECRET;
+
+  if (!scriptUrl) {
+    return false;
+  }
+
+  const response = await fetch(scriptUrl, {
+    body: JSON.stringify({ ...data, secret }),
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    method: 'POST',
+  });
+  const result = await response.json().catch(() => null);
+
+  if (!response.ok || result?.ok === false) {
+    throw new Error(result?.message || 'Unable to save your message.');
+  }
+
+  return true;
+}
+
 function sheetRange(range) {
   return `'${SHEET_NAME.replace(/'/g, "''")}'!${range}`;
 }
@@ -201,28 +223,32 @@ export default async function handler(request, response) {
   }
 
   try {
-    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
-    if (!spreadsheetId) {
-      throw new Error('Google Sheet ID is not configured.');
-    }
-
     const validation = validatePayload(parseBody(request.body));
     if (validation.error) {
       return json(response, 400, { message: validation.error });
     }
 
-    const token = await getAccessToken();
-    await ensureSheet(token, spreadsheetId);
-    await sheetsFetch(
-      `${spreadsheetId}/values/${encodeURIComponent(sheetRange('A:F'))}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
-      token,
-      {
-        body: JSON.stringify({
-          values: [[new Date().toISOString(), validation.data.name, validation.data.email, validation.data.phone, validation.data.message, 'New']],
-        }),
-        method: 'POST',
-      },
-    );
+    const savedWithAppsScript = await submitToAppsScript(validation.data);
+
+    if (!savedWithAppsScript) {
+      const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+      if (!spreadsheetId) {
+        throw new Error('Google Sheet ID or Apps Script URL is not configured.');
+      }
+
+      const token = await getAccessToken();
+      await ensureSheet(token, spreadsheetId);
+      await sheetsFetch(
+        `${spreadsheetId}/values/${encodeURIComponent(sheetRange('A:F'))}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
+        token,
+        {
+          body: JSON.stringify({
+            values: [[new Date().toISOString(), validation.data.name, validation.data.email, validation.data.phone, validation.data.message, 'New']],
+          }),
+          method: 'POST',
+        },
+      );
+    }
 
     return json(response, 200, { message: 'Message saved.' });
   } catch (error) {
